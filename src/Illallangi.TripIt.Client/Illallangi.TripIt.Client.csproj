@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{63DA1060-D81F-4DD2-B1A0-8396DEB5C77C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Illallangi.TripIt</RootNamespace>
+    <AssemblyName>Illallangi.TripIt.Refit</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Illallangi.OAuthHandler, Version=1.0.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Illallangi.OAuthHandler.1.0.6\lib\net472\Illallangi.OAuthHandler.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Refit, Version=4.6.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Refit.4.6.99\lib\net461\Refit.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Api\Extensions\ProfileExtensions.cs" />
+    <Compile Include="Api\Extensions\TripExtensions.cs" />
+    <Compile Include="Api\IAccessTokenApi.cs" />
+    <Compile Include="Api\ITripApi.cs" />
+    <Compile Include="Api\IProfileApi.cs" />
+    <Compile Include="Api\IRequestTokenApi.cs" />
+    <Compile Include="Api\Extensions\TokenExtensions.cs" />
+    <Compile Include="Api\ISettingsApi.cs" />
+    <Compile Include="Api\ITripItApi.cs" />
+    <Compile Include="Client\SettingsClient.cs" />
+    <Compile Include="Model\Profile\BillingPeriod.cs" />
+    <Compile Include="Model\Response\Error.cs" />
+    <Compile Include="Model\Common\Group.cs" />
+    <Compile Include="Model\Response\Request.cs" />
+    <Compile Include="Model\Trip\DateConverter.cs" />
+    <Compile Include="Model\Trip\Invitee.cs" />
+    <Compile Include="Model\Profile\NotificationSetting.cs" />
+    <Compile Include="Model\Profile\ProfileNotificationSettingCollection.cs" />
+    <Compile Include="Model\Profile\Profile.cs" />
+    <Compile Include="Model\Profile\EmailAddress.cs" />
+    <Compile Include="Model\JsonCollection.cs" />
+    <Compile Include="Model\Profile\ProfileEmailAddressCollection.cs" />
+    <Compile Include="Model\Response\Response.cs" />
+    <Compile Include="SingleOrArrayConverter.cs" />
+    <Compile Include="Model\Trip\Trip.cs" />
+    <Compile Include="Model\Trip\Crs.cs" />
+    <Compile Include="Model\Trip\Address.cs" />
+    <Compile Include="Model\Trip\TripPurposeCollection.cs" />
+    <Compile Include="Model\Trip\Purpose.cs" />
+    <Compile Include="Model\Response\Warning.cs" />
+    <Compile Include="RegistryKeyExtensions.cs" />
+    <Compile Include="Model\Settings\Settings.cs" />
+    <Compile Include="Client\TripItRefitClient.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Refit.4.6.99\build\net461\refit.targets" Condition="Exists('..\packages\Refit.4.6.99\build\net461\refit.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Refit.4.6.99\build\net461\refit.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Refit.4.6.99\build\net461\refit.targets'))" />
+  </Target>
+</Project>

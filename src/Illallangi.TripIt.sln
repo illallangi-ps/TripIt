@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28729.10
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Illallangi.TripIt.PowerShell", "Illallangi.TripIt.PowerShell\Illallangi.TripIt.PowerShell.csproj", "{42A4FED9-D4A9-4A52-898E-F0F65562173E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Illallangi.TripIt.Client", "Illallangi.TripIt.Client\Illallangi.TripIt.Client.csproj", "{63DA1060-D81F-4DD2-B1A0-8396DEB5C77C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{42A4FED9-D4A9-4A52-898E-F0F65562173E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42A4FED9-D4A9-4A52-898E-F0F65562173E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42A4FED9-D4A9-4A52-898E-F0F65562173E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42A4FED9-D4A9-4A52-898E-F0F65562173E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63DA1060-D81F-4DD2-B1A0-8396DEB5C77C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63DA1060-D81F-4DD2-B1A0-8396DEB5C77C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63DA1060-D81F-4DD2-B1A0-8396DEB5C77C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63DA1060-D81F-4DD2-B1A0-8396DEB5C77C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {37CA71D2-A4E7-4C57-A9EF-0FB83AA97474}
+	EndGlobalSection
+EndGlobal
