@@ -1,9 +1,7 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using System.Management.Automation;
+﻿using System.Management.Automation;
 
-namespace Illallangi.TripIt
+namespace Illallangi.TripIt.Settings
 {
-    [SuppressMessage("ReSharper", "UnusedMember.Global")]
     [Cmdlet(VerbsCommon.Get, "TripItSetting")]
     public sealed class GetSetting : TripItCmdlet
     {

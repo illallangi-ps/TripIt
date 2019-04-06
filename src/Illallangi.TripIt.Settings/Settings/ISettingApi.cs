@@ -2,6 +2,6 @@
 {
     public interface ISettingApi
     {
-        Setting GetSetting();
+        ISetting GetSetting();
     }
 }

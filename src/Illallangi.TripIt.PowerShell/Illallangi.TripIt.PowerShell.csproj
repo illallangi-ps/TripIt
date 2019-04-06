@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Settings\SetSetting.cs" />
     <Compile Include="Trips\GetTrip.cs" />
     <Compile Include="Settings\GetSetting.cs" />
     <Compile Include="Profiles\GetProfile.cs" />

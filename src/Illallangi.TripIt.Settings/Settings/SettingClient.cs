@@ -4,15 +4,15 @@
     {
         #region Fields
 
-        private Setting currentSetting;
+        private ISetting currentSetting;
 
         #endregion
 
         #region Methods
 
-        public Setting GetSetting()
+        public ISetting GetSetting()
         {
-            return this.currentSetting ?? (this.currentSetting = new Setting());
+            return this.currentSetting ?? (this.currentSetting = JsonSetting.Retrieve());
         }
 
         #endregion
