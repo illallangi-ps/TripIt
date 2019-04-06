@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Management.Automation;
 using System.Management.Automation.Host;
-using Illallangi.TripIt.Api;
-using Illallangi.TripIt.Client;
 
 namespace Illallangi.TripIt
 {
@@ -10,14 +8,14 @@ namespace Illallangi.TripIt
     {
         #region Fields
 
-        private ITripItApi currentClient;
+        private TripItRefitClient currentClient;
 
         #endregion
 
         #region Properties
 
-        protected ITripItApi Client => this.currentClient ?? (this.currentClient = this.GetClient());
-
+        protected TripItRefitClient Client => this.currentClient ?? (this.currentClient = this.GetClient());
+        
         #endregion
 
         #region Methods
@@ -33,8 +31,8 @@ namespace Illallangi.TripIt
         private TripItRefitClient GetClient()
         {
             return new TripItRefitClient(
-                this.AuthorizeToken,
-                this.Host.UI.WriteDebugLine);
+                new Settings.SettingClient(), 
+                this.AuthorizeToken);
         }
 
         #endregion

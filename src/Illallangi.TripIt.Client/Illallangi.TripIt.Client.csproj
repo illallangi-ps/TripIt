@@ -54,44 +54,29 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Api\Extensions\ProfileExtensions.cs" />
-    <Compile Include="Api\Extensions\TripExtensions.cs" />
-    <Compile Include="Api\IAccessTokenApi.cs" />
-    <Compile Include="Api\ITripApi.cs" />
-    <Compile Include="Api\IProfileApi.cs" />
-    <Compile Include="Api\IRequestTokenApi.cs" />
-    <Compile Include="Api\Extensions\TokenExtensions.cs" />
-    <Compile Include="Api\ISettingsApi.cs" />
-    <Compile Include="Api\ITripItApi.cs" />
-    <Compile Include="Client\SettingsClient.cs" />
-    <Compile Include="Model\Profile\BillingPeriod.cs" />
-    <Compile Include="Model\Response\Error.cs" />
-    <Compile Include="Model\Common\Group.cs" />
-    <Compile Include="Model\Response\Request.cs" />
-    <Compile Include="Model\Trip\DateConverter.cs" />
-    <Compile Include="Model\Trip\Invitee.cs" />
-    <Compile Include="Model\Profile\NotificationSetting.cs" />
-    <Compile Include="Model\Profile\ProfileNotificationSettingCollection.cs" />
-    <Compile Include="Model\Profile\Profile.cs" />
-    <Compile Include="Model\Profile\EmailAddress.cs" />
-    <Compile Include="Model\JsonCollection.cs" />
-    <Compile Include="Model\Profile\ProfileEmailAddressCollection.cs" />
-    <Compile Include="Model\Response\Response.cs" />
-    <Compile Include="SingleOrArrayConverter.cs" />
-    <Compile Include="Model\Trip\Trip.cs" />
-    <Compile Include="Model\Trip\Crs.cs" />
-    <Compile Include="Model\Trip\Address.cs" />
-    <Compile Include="Model\Trip\TripPurposeCollection.cs" />
-    <Compile Include="Model\Trip\Purpose.cs" />
-    <Compile Include="Model\Response\Warning.cs" />
-    <Compile Include="RegistryKeyExtensions.cs" />
-    <Compile Include="Model\Settings\Settings.cs" />
-    <Compile Include="Client\TripItRefitClient.cs" />
+    <Compile Include="Profiles\ProfileExtensions.cs" />
+    <Compile Include="Trips\TripExtensions.cs" />
+    <Compile Include="Tokens\IAccessTokenApi.cs" />
+    <Compile Include="Trips\ITripApi.cs" />
+    <Compile Include="Profiles\IProfileApi.cs" />
+    <Compile Include="Tokens\IRequestTokenApi.cs" />
+    <Compile Include="Tokens\TokenExtensions.cs" />
+    <Compile Include="TripItRefitClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Illallangi.TripIt.Model\Illallangi.TripIt.Model.csproj">
+      <Project>{6460673e-7f41-4d6b-8569-cc3fe2dc5d96}</Project>
+      <Name>Illallangi.TripIt.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Illallangi.TripIt.Settings\Illallangi.TripIt.Settings.csproj">
+      <Project>{1926db00-dd6a-4e08-adba-2affc39ea8c4}</Project>
+      <Name>Illallangi.TripIt.Settings</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Refit.4.6.99\build\net461\refit.targets" Condition="Exists('..\packages\Refit.4.6.99\build\net461\refit.targets')" />
