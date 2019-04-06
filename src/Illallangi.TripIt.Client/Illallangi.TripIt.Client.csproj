@@ -54,39 +54,18 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Api\Extensions\ProfileExtensions.cs" />
-    <Compile Include="Api\Extensions\TripExtensions.cs" />
-    <Compile Include="Api\IAccessTokenApi.cs" />
-    <Compile Include="Api\ITripApi.cs" />
-    <Compile Include="Api\IProfileApi.cs" />
-    <Compile Include="Api\IRequestTokenApi.cs" />
-    <Compile Include="Api\Extensions\TokenExtensions.cs" />
-    <Compile Include="Api\ISettingsApi.cs" />
-    <Compile Include="Api\ITripItApi.cs" />
-    <Compile Include="Client\SettingsClient.cs" />
-    <Compile Include="Model\Profile\BillingPeriod.cs" />
-    <Compile Include="Model\Response\Error.cs" />
-    <Compile Include="Model\Common\Group.cs" />
-    <Compile Include="Model\Response\Request.cs" />
-    <Compile Include="Model\Trip\DateConverter.cs" />
-    <Compile Include="Model\Trip\Invitee.cs" />
-    <Compile Include="Model\Profile\NotificationSetting.cs" />
-    <Compile Include="Model\Profile\ProfileNotificationSettingCollection.cs" />
-    <Compile Include="Model\Profile\Profile.cs" />
-    <Compile Include="Model\Profile\EmailAddress.cs" />
-    <Compile Include="Model\JsonCollection.cs" />
-    <Compile Include="Model\Profile\ProfileEmailAddressCollection.cs" />
-    <Compile Include="Model\Response\Response.cs" />
+    <Compile Include="Extensions\ProfileExtensions.cs" />
+    <Compile Include="Extensions\TripExtensions.cs" />
+    <Compile Include="IAccessTokenApi.cs" />
+    <Compile Include="ITripApi.cs" />
+    <Compile Include="IProfileApi.cs" />
+    <Compile Include="IRequestTokenApi.cs" />
+    <Compile Include="Extensions\TokenExtensions.cs" />
+    <Compile Include="ISettingsApi.cs" />
+    <Compile Include="ITripItApi.cs" />
     <Compile Include="SingleOrArrayConverter.cs" />
-    <Compile Include="Model\Trip\Trip.cs" />
-    <Compile Include="Model\Trip\Crs.cs" />
-    <Compile Include="Model\Trip\Address.cs" />
-    <Compile Include="Model\Trip\TripPurposeCollection.cs" />
-    <Compile Include="Model\Trip\Purpose.cs" />
-    <Compile Include="Model\Response\Warning.cs" />
     <Compile Include="RegistryKeyExtensions.cs" />
-    <Compile Include="Model\Settings\Settings.cs" />
-    <Compile Include="Client\TripItRefitClient.cs" />
+    <Compile Include="TripItRefitClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
