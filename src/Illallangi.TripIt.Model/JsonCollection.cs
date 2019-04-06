@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 
-namespace Illallangi.TripIt.Model
+namespace Illallangi.TripIt
 {
     public class JsonCollection<T> : ICollection<T>
     {

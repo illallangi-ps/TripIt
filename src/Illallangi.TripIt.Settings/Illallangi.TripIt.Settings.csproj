@@ -7,7 +7,7 @@
     <ProjectGuid>{1926DB00-DD6A-4E08-ADBA-2AFFC39EA8C4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Illallangi.TripIt.Settings</RootNamespace>
+    <RootNamespace>Illallangi.TripIt</RootNamespace>
     <AssemblyName>Illallangi.TripIt.Settings</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -42,7 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SettingsClient.cs" />
+    <Compile Include="RegistryKeyExtensions.cs" />
+    <Compile Include="Settings\ISettingsApi.cs" />
+    <Compile Include="Settings\Setting.cs" />
+    <Compile Include="Settings\SettingsClient.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -48,17 +48,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Trip\GetTrip.cs" />
-    <Compile Include="Setting\GetSetting.cs" />
-    <Compile Include="Profile\GetProfile.cs" />
+    <Compile Include="Trips\GetTrip.cs" />
+    <Compile Include="Settings\GetSetting.cs" />
+    <Compile Include="Profiles\GetProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TripItCmdlet.cs" />
-    <Compile Include="Trip\NewTrip.cs" />
+    <Compile Include="Trips\NewTrip.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Illallangi.TripIt.Client\Illallangi.TripIt.Client.csproj">
       <Project>{63da1060-d81f-4dd2-b1a0-8396deb5c77c}</Project>
       <Name>Illallangi.TripIt.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Illallangi.TripIt.Model\Illallangi.TripIt.Model.csproj">
+      <Project>{6460673e-7f41-4d6b-8569-cc3fe2dc5d96}</Project>
+      <Name>Illallangi.TripIt.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Illallangi.TripIt.Settings\Illallangi.TripIt.Settings.csproj">
+      <Project>{1926DB00-DD6A-4E08-ADBA-2AFFC39EA8C4}</Project>
+      <Name>Illallangi.TripIt.Settings</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

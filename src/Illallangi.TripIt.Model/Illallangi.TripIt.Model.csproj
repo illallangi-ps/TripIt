@@ -7,7 +7,7 @@
     <ProjectGuid>{6460673E-7F41-4D6B-8569-CC3FE2DC5D96}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Illallangi.TripIt.Model</RootNamespace>
+    <RootNamespace>Illallangi.TripIt</RootNamespace>
     <AssemblyName>Illallangi.TripIt.Model</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,27 +44,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Common\Group.cs" />
+    <Compile Include="Group.cs" />
     <Compile Include="JsonCollection.cs" />
-    <Compile Include="Profile\BillingPeriod.cs" />
-    <Compile Include="Profile\EmailAddress.cs" />
-    <Compile Include="Profile\NotificationSetting.cs" />
-    <Compile Include="Profile\Profile.cs" />
-    <Compile Include="Profile\ProfileEmailAddressCollection.cs" />
-    <Compile Include="Profile\ProfileNotificationSettingCollection.cs" />
-    <Compile Include="Response\Error.cs" />
-    <Compile Include="Response\Request.cs" />
-    <Compile Include="Response\Response.cs" />
-    <Compile Include="Response\Warning.cs" />
-    <Compile Include="Settings\Settings.cs" />
-    <Compile Include="Trip\Address.cs" />
-    <Compile Include="Trip\Crs.cs" />
-    <Compile Include="Trip\DateConverter.cs" />
-    <Compile Include="Trip\Invitee.cs" />
-    <Compile Include="Trip\Purpose.cs" />
-    <Compile Include="Trip\Trip.cs" />
-    <Compile Include="Trip\TripPurposeCollection.cs" />
+    <Compile Include="Profiles\BillingPeriod.cs" />
+    <Compile Include="Profiles\EmailAddress.cs" />
+    <Compile Include="Profiles\NotificationSetting.cs" />
+    <Compile Include="Profiles\Profile.cs" />
+    <Compile Include="Profiles\ProfileEmailAddressCollection.cs" />
+    <Compile Include="Profiles\ProfileNotificationSettingCollection.cs" />
+    <Compile Include="Error.cs" />
+    <Compile Include="Trips\Request.cs" />
+    <Compile Include="Response.cs" />
+    <Compile Include="Warning.cs" />
+    <Compile Include="SingleOrArrayConverter.cs" />
+    <Compile Include="Trips\Address.cs" />
+    <Compile Include="Trips\Crs.cs" />
+    <Compile Include="Trips\DateConverter.cs" />
+    <Compile Include="Trips\Invitee.cs" />
+    <Compile Include="Trips\Purpose.cs" />
+    <Compile Include="Trips\Trip.cs" />
+    <Compile Include="Trips\TripPurposeCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
