@@ -38,7 +38,7 @@ namespace Illallangi.TripIt.Profiles
 
         public override string ToString()
         {
-            return $@"{this.Address}";
+            return $@"{Address}";
         }
 
         #endregion

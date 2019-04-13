@@ -9,7 +9,7 @@ namespace Illallangi.TripIt.Profiles
     {
         protected override void EndProcessing()
         {
-            this.WriteObject(this.Client.ProfileApi.GetProfile().Result.Profile, true);
+            WriteObject(Get<IProfileApi>().GetProfile().Result.Profile, true);
         }
     }
 }

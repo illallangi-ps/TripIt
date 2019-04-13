@@ -9,7 +9,7 @@ namespace Illallangi.TripIt.Trips
     {
         protected override void EndProcessing()
         {
-            this.WriteObject(this.Client.TripApi.GetTrip(), true);
+            WriteObject(Get<ITripApi>().GetTrip(), true);
         }
     }
 }

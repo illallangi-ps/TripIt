@@ -1,40 +1,20 @@
-﻿using System;
-using System.Management.Automation;
-using System.Management.Automation.Host;
+﻿using System.Management.Automation.Host;
 
 namespace Illallangi.TripIt
 {
-    public abstract class TripItCmdlet : PSCmdlet
+    public abstract class TripItCmdlet : NinjectCmdlet<TripItModule>
     {
-        #region Fields
-
-        private TripItRefitClient currentClient;
-
-        #endregion
-
-        #region Properties
-
-        protected TripItRefitClient Client => this.currentClient ?? (this.currentClient = this.GetClient());
-        
-        #endregion
-
-        #region Methods
-
-        private void AuthorizeToken(Uri uri, string token)
+        protected override TripItModule GetModule()
         {
-            System.Diagnostics.Process.Start(uri.ToString());
-            this.Host.UI.WriteLine($@"TripIt will now open in your default web browser to authorize token ""{token}"".");
-            this.Host.UI.WriteLine(@"Please complete the authorization process and press OK once complete.");
-            this.Host.UI.RawUI.ReadKey(ReadKeyOptions.NoEcho | ReadKeyOptions.IncludeKeyDown);
+            return new TripItModule(
+                args =>
+                {
+                    System.Diagnostics.Process.Start(args.Uri.ToString());
+                    Host.UI.WriteLine(
+                        $@"TripIt will now open in your default web browser to authorize token ""{args.Token}"".");
+                    Host.UI.WriteLine(@"Please complete the authorization process and press any key once complete.");
+                    Host.UI.RawUI.ReadKey(ReadKeyOptions.NoEcho | ReadKeyOptions.IncludeKeyDown);
+                });
         }
-
-        private TripItRefitClient GetClient()
-        {
-            return new TripItRefitClient(
-                new Settings.SettingClient(), 
-                this.AuthorizeToken);
-        }
-
-        #endregion
     }
 }

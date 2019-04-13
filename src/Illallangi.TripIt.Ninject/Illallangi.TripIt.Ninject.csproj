@@ -4,14 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{42A4FED9-D4A9-4A52-898E-F0F65562173E}</ProjectGuid>
+    <ProjectGuid>{592211C0-35AD-4127-8AEF-332DFBF5B83E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Illallangi.TripIt</RootNamespace>
-    <AssemblyName>Illallangi.TripIt.PowerShell</AssemblyName>
+    <AssemblyName>Illallangi.TripIt.Ninject</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,14 +23,11 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <StartArguments>-noexit -command Import-Module .\%2a.PowerShell.dll%3b Get-Module Illallangi.%2a |%25{ %24_.ExportedCommands }</StartArguments>
-    <StartAction>Program</StartAction>
-    <StartProgram>C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</StartProgram>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\Illallangi.TripIt\</OutputPath>
+    <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -37,28 +36,30 @@
     <Reference Include="Illallangi.OAuthHandler, Version=1.0.11.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Illallangi.OAuthHandler.1.0.11\lib\net472\Illallangi.OAuthHandler.dll</HintPath>
     </Reference>
+    <Reference Include="Illallangi.Observable, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Illallangi.Observable.1.0.1\lib\net472\Illallangi.Observable.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <HintPath>..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
     </Reference>
+    <Reference Include="Refit, Version=4.6.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Refit.4.6.99\lib\net461\Refit.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Management.Automation, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\System.Management.Automation.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NinjectCmdlet.cs" />
-    <Compile Include="Settings\SetSetting.cs" />
-    <Compile Include="Trips\GetTrip.cs" />
-    <Compile Include="Settings\GetSetting.cs" />
-    <Compile Include="Profiles\GetProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TripItCmdlet.cs" />
-    <Compile Include="Trips\NewTrip.cs" />
+    <Compile Include="OAuthHmacSha1SignedRestServiceProvider.cs" />
+    <Compile Include="TripItModule.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Illallangi.TripIt.Client\Illallangi.TripIt.Client.csproj">
@@ -69,24 +70,17 @@
       <Project>{6460673e-7f41-4d6b-8569-cc3fe2dc5d96}</Project>
       <Name>Illallangi.TripIt.Model</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Illallangi.TripIt.Ninject\Illallangi.TripIt.Ninject.csproj">
-      <Project>{592211C0-35AD-4127-8AEF-332DFBF5B83E}</Project>
-      <Name>Illallangi.TripIt.Ninject</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Illallangi.TripIt.Settings\Illallangi.TripIt.Settings.csproj">
-      <Project>{1926DB00-DD6A-4E08-ADBA-2AFFC39EA8C4}</Project>
+      <Project>{1926db00-dd6a-4e08-adba-2affc39ea8c4}</Project>
       <Name>Illallangi.TripIt.Settings</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="app.config" />
-    <None Include="Illallangi.TripIt.psd1">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Illallangi.TripIt.psm1">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="packages.config" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Refit.4.6.99\build\net461\refit.targets" Condition="Exists('..\packages\Refit.4.6.99\build\net461\refit.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Refit.4.6.99\build\net461\refit.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Refit.4.6.99\build\net461\refit.targets'))" />
+  </Target>
 </Project>

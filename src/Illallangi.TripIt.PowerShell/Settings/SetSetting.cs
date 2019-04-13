@@ -8,55 +8,55 @@ namespace Illallangi.TripIt.Settings
         [Parameter(ValueFromPipelineByPropertyName = true)]
         public string ConsumerKey
         {
-            get => this.Client.SettingApi.GetSetting().ConsumerKey;
-            set => this.Client.SettingApi.GetSetting().ConsumerKey = value;
+            get => Get<ISetting>().ConsumerKey;
+            set => Get<ISetting>().ConsumerKey = value;
         }
 
         [Parameter(ValueFromPipelineByPropertyName = true)]
         public string ConsumerSecret
         {
-            get => this.Client.SettingApi.GetSetting().ConsumerSecret;
-            set => this.Client.SettingApi.GetSetting().ConsumerSecret = value;
+            get => Get<ISetting>().ConsumerSecret;
+            set => Get<ISetting>().ConsumerSecret = value;
         }
 
         [Parameter(ValueFromPipelineByPropertyName = true)]
         public string AuthorizeUrl
         {
-            get => this.Client.SettingApi.GetSetting().AuthorizeUrl;
-            set => this.Client.SettingApi.GetSetting().AuthorizeUrl = value;
+            get => Get<ISetting>().AuthorizeUrl;
+            set => Get<ISetting>().AuthorizeUrl = value;
         }
 
         [Parameter(ValueFromPipelineByPropertyName = true)]
         public string CallBackUrl
         {
-            get => this.Client.SettingApi.GetSetting().CallBackUrl;
-            set => this.Client.SettingApi.GetSetting().CallBackUrl = value;
+            get => Get<ISetting>().CallBackUrl;
+            set => Get<ISetting>().CallBackUrl = value;
         }
 
         [Parameter(ValueFromPipelineByPropertyName = true)]
         public string BaseUrl
         {
-            get => this.Client.SettingApi.GetSetting().BaseUrl;
-            set => this.Client.SettingApi.GetSetting().BaseUrl = value;
+            get => Get<ISetting>().BaseUrl;
+            set => Get<ISetting>().BaseUrl = value;
         }
 
         [Parameter(ValueFromPipelineByPropertyName = true)]
         public string AuthorizedKey
         {
-            get => this.Client.SettingApi.GetSetting().AuthorizedKey;
-            set => this.Client.SettingApi.GetSetting().AuthorizedKey = value;
+            get => Get<ISetting>().AuthorizedKey;
+            set => Get<ISetting>().AuthorizedKey = value;
         }
 
         [Parameter(ValueFromPipelineByPropertyName = true)]
         public string AuthorizedSecret
         {
-            get => this.Client.SettingApi.GetSetting().AuthorizedSecret;
-            set => this.Client.SettingApi.GetSetting().AuthorizedSecret = value;
+            get => Get<ISetting>().AuthorizedSecret;
+            set => Get<ISetting>().AuthorizedSecret = value;
         }
         
         protected override void EndProcessing()
         {
-            this.WriteObject(this.Client.SettingApi.GetSetting());
+            WriteObject(Get<ISetting>());
         }
     }
 }

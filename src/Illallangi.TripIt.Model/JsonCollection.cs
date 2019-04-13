@@ -7,27 +7,27 @@ namespace Illallangi.TripIt
     {
         public JsonCollection(ICollection<T> collection)
         {
-            this.Inner = collection;
+            Inner = collection;
         }
 
-        public int Count => this.Inner.Count;
+        public int Count => Inner.Count;
 
-        public bool IsReadOnly => this.Inner.IsReadOnly;
+        public bool IsReadOnly => Inner.IsReadOnly;
 
         private ICollection<T> Inner { get; }
 
-        public void Add(T item) => this.Inner.Add(item);
+        public void Add(T item) => Inner.Add(item);
 
-        public void Clear() => this.Inner.Clear();
+        public void Clear() => Inner.Clear();
 
-        public bool Contains(T item) => this.Inner.Contains(item);
+        public bool Contains(T item) => Inner.Contains(item);
 
-        public void CopyTo(T[] array, int arrayIndex) => this.Inner.CopyTo(array, arrayIndex);
+        public void CopyTo(T[] array, int arrayIndex) => Inner.CopyTo(array, arrayIndex);
 
-        public IEnumerator<T> GetEnumerator() => this.Inner.GetEnumerator();
+        public IEnumerator<T> GetEnumerator() => Inner.GetEnumerator();
 
-        public bool Remove(T item) => this.Inner.Remove(item);
+        public bool Remove(T item) => Inner.Remove(item);
 
-        IEnumerator IEnumerable.GetEnumerator() => this.Inner.GetEnumerator();
+        IEnumerator IEnumerable.GetEnumerator() => Inner.GetEnumerator();
     }
 }
