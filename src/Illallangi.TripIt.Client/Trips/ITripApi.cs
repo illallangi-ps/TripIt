@@ -6,6 +6,7 @@ namespace Illallangi.TripIt.Trips
 {
     using System.Collections.Generic;
 
+    [Headers(OAuthHmacSha1SigningHandler.AuthorizationHeader)]
     public interface ITripApi
     {
         [Get(@"/v1/list/trip/past/{past}?format=json&page_num={pageNumber}&page_size={pageSize}")]

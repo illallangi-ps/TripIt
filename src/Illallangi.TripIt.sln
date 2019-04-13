@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Illallangi.TripIt.Model", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Illallangi.TripIt.Settings", "Illallangi.TripIt.Settings\Illallangi.TripIt.Settings.csproj", "{1926DB00-DD6A-4E08-ADBA-2AFFC39EA8C4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Illallangi.TripIt.Ninject", "Illallangi.TripIt.Ninject\Illallangi.TripIt.Ninject.csproj", "{592211C0-35AD-4127-8AEF-332DFBF5B83E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{1926DB00-DD6A-4E08-ADBA-2AFFC39EA8C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1926DB00-DD6A-4E08-ADBA-2AFFC39EA8C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1926DB00-DD6A-4E08-ADBA-2AFFC39EA8C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{592211C0-35AD-4127-8AEF-332DFBF5B83E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{592211C0-35AD-4127-8AEF-332DFBF5B83E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{592211C0-35AD-4127-8AEF-332DFBF5B83E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{592211C0-35AD-4127-8AEF-332DFBF5B83E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

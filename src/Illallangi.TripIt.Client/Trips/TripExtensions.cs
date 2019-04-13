@@ -3,8 +3,6 @@ using System.Collections.Generic;
 
 namespace Illallangi.TripIt.Trips
 {
-    using Newtonsoft.Json;
-
     public static class TripExtensions
     {
         public static IEnumerable<Trip> GetTrip(this ITripApi api)

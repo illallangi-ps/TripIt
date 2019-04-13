@@ -22,7 +22,7 @@ namespace Illallangi.TripIt.Trips
 
         protected override void ProcessRecord()
         {
-            this.WriteObject(this.Client.TripApi.NewTrip(this.StartDate, this.EndDate, this.PrimaryLocation, this.DisplayName), true);
+            WriteObject(Get<ITripApi>().NewTrip(StartDate, EndDate, PrimaryLocation, DisplayName), true);
         }
     }
 }

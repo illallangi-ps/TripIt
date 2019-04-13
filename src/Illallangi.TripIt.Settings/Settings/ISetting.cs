@@ -1,13 +1,6 @@
 ﻿namespace Illallangi.TripIt.Settings
 {
-    public interface ISetting
+    public interface ISetting : IOAuthSetting
     {
-        string ConsumerKey { get; set; }
-        string ConsumerSecret { get; set; }
-        string AuthorizeUrl { get; set; }
-        string CallBackUrl { get; set; }
-        string BaseUrl { get; set; }
-        string AuthorizedKey { get; set; }
-        string AuthorizedSecret { get; set; }
     }
 }

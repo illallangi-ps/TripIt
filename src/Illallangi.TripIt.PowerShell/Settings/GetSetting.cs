@@ -7,7 +7,7 @@ namespace Illallangi.TripIt.Settings
     {
         protected override void EndProcessing()
         {
-            this.WriteObject(this.Client.SettingApi.GetSetting());
+            WriteObject(Get<ISetting>());
         }
     }
 }

@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Illallangi.TripIt.Settings")]
+[assembly: AssemblyTitle("Illallangi.TripIt.Ninject")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Illallangi.TripIt.Settings")]
+[assembly: AssemblyProduct("Illallangi.TripIt.Ninject")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("1926db00-dd6a-4e08-adba-2affc39ea8c4")]
+[assembly: Guid("592211c0-35ad-4127-8aef-332dfbf5b83e")]
 
 // Version information for an assembly consists of the following four values:
 //

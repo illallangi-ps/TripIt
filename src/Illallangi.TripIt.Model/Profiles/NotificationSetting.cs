@@ -35,7 +35,7 @@ namespace Illallangi.TripIt.Profiles
 
         public override string ToString()
         {
-            return $@"{this.Name}: {this.IsEnabled}";
+            return $@"{Name}: {IsEnabled}";
         }
 
         #endregion

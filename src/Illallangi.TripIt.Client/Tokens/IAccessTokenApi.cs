@@ -6,6 +6,6 @@ namespace Illallangi.TripIt.Tokens
     public interface IAccessTokenApi
     { 
         [Post(@"/oauth/access_token")]
-        Task<string> AccessToken();
+        Task<string> AccessToken([Body(BodySerializationMethod.UrlEncoded)]AccessTokenParams p);
     }
 }
